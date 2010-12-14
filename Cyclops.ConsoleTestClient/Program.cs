@@ -19,10 +19,9 @@ namespace Cyclops.ConsoleTestClient
 
             Console.WriteLine(@"Connecting...");
             session.BeginAuthentication(new ConnectionConfig {
-                                                User = "hellrider", 
+                                                User = "cyclops", 
                                                 Server = "jabber.uruchie.org",
-                                                NetworkHost = "10.1.1.135",
-                                                Password = "5ty67ui8"
+                                                Password = "cyclops"
                                             });
             session.Conferences.Add(new jabber.JID("main", "conference.jabber.uruchie.org", "CyclopsIsAlive"));
             Console.ReadKey();

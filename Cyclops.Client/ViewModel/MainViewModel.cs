@@ -27,7 +27,6 @@ namespace Cyclops.Client.ViewModel
             ConferencesModels = new ObservableCollection<ConferenceViewModel>();
             if (IsInDesignMode)
             {
-                // Code runs in Blend --> create design time data.
             }
             else
             {
@@ -35,18 +34,14 @@ namespace Cyclops.Client.ViewModel
                                                       {
                                                           User = "cyclops",
                                                           Server = "jabber.uruchie.org",
-                                                          //NetworkHost = "10.1.1.135",
                                                           Password = "cyclops"
                                                       });
 
                 JabberSession.Conferences.Add(new JID("main", "conference.jabber.uruchie.org", "CIA"));
-                //мультиконфовость пока не пашет (там из-за DataTemplat'инга в TabControl)
                 //JabberSession.Conferences.Add(new JID("cyclops", "conference.jabber.uruchie.org", "CIA2"));
                 //JabberSession.Conferences.Add(new JID("CIA2", "conference.jabber.uruchie.org", "CIA2"));
                 //JabberSession.Conferences.Add(new JID("support", "conference.jabber.uruchie.org", "CIA2"));
                 JabberSession.Conferences.SynchronizeWith(ConferencesModels, conference => new ConferenceViewModel(conference));
-
-                // Code runs "for real"
             }
 
 
