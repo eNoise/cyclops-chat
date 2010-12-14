@@ -35,7 +35,7 @@ namespace Cyclops.Client.ViewModel
                                                       {
                                                           User = "cyclops",
                                                           Server = "jabber.uruchie.org",
-                                                          NetworkHost = "10.1.1.135",
+                                                          //NetworkHost = "10.1.1.135",
                                                           Password = "cyclops"
                                                       });
 
