@@ -1,0 +1,48 @@
+﻿<Window x:Class="Cyclops.Client.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ViewModel="clr-namespace:Cyclops.Client.ViewModel" xmlns:Controls="clr-namespace:Cyclops.Client.Controls" Title="MainWindow" Height="507" Width="938" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="Auto">
+
+	<Window.DataContext>
+		<ViewModel:MainViewModel />
+	</Window.DataContext>
+
+	<Window.Resources>
+		<!-- conference view-->
+		<DataTemplate x:Key="conferenceDataTemplate" x:Shared="False">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="3*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+
+				<!--<ListBox Grid.Column="0" ItemsSource="{Binding Messages}"
+                         ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                         ScrollViewer.CanContentScroll="False"/>-->
+                
+                <Controls:ChatFlowDocumentScrollViewer>
+                    <Controls:ChatFlowDocument Messages="{Binding Messages}" LineHeight="1" Style="{DynamicResource flowDocumentStyle}" />
+                </Controls:ChatFlowDocumentScrollViewer>
+                
+                
+				<ListBox Grid.Column="1" ItemsSource="{Binding Conference.Members}" />
+				<Grid Grid.Row="1" Grid.ColumnSpan="2">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition Width="65" />
+					</Grid.ColumnDefinitions>
+                    <Controls:InputBox Text="{Binding Path=CurrentlyTypedMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SendCommand="{Binding SendMessage}"/>
+					<Button Grid.Column="1" Content="Send" Command="{Binding SendMessage}" />
+				</Grid>
+			</Grid>
+		</DataTemplate>
+	</Window.Resources>
+
+	<Grid x:Name="LayoutRoot">
+		<TabControl ItemsSource="{Binding ConferencesModels}" DisplayMemberPath="Conference.ConferenceJid.User"  
+                    ContentTemplate="{StaticResource conferenceDataTemplate}" />
+        <Button Height="20" Width="50" Content="Refresh" HorizontalAlignment="Right" VerticalAlignment="Top" Command="{Binding UpdateStyles}" />
+    </Grid>
+    
+</Window>

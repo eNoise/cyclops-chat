@@ -1,0 +1,68 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="parentRowStyle">
+        <Setter Property="Paragraph.TextAlignment" Value="Left" />
+        <Setter Property="Paragraph.LineHeight" Value="0.5" />
+    </Style>
+    
+    
+    
+    <!-- Общий стиль для ника (остальные наследуються)-->
+    <Style x:Key="nickStyle">
+        <Setter Property="Run.FontFamily" Value="Segoe UI" />
+        <Setter Property="Run.FontSize" Value="12.8" />
+        <Setter Property="Run.FontWeight" Value="Bold" />
+        <Setter Property="Run.Foreground" Value="#EE4B75A0" />
+        <Setter Property="Run.Cursor" Value="Hand" />
+    </Style>
+
+    <!-- стиль для системного ника -->
+    <Style x:Key="systemNickStyle" BasedOn="{StaticResource nickStyle}">
+        <Setter Property="Run.Foreground" Value="LightGray" />
+    </Style>
+
+    <!-- Общий стиль для сообщения (остальные наследуються)-->
+    <Style x:Key="commonMessageStyle">
+        <Setter Property="Run.FontFamily" Value="Segoe UI" />
+        <Setter Property="Run.FontSize" Value="12.8" />
+        <Setter Property="Run.Foreground" Value="Black" />
+        <Setter Property="Run.Cursor" Value="Hand" />
+    </Style>
+
+
+    <!-- стиль для системного ника -->
+    <Style x:Key="systemMessageStyle" BasedOn="{StaticResource commonMessageStyle}">
+        <Setter Property="Run.Foreground" Value="LightGray" />
+    </Style>
+
+
+    <!-- стиль для системного ника -->
+    <Style x:Key="errorMessageStyle" BasedOn="{StaticResource commonMessageStyle}">
+        <Setter Property="Run.Foreground" Value="DarkRed" />
+    </Style>
+
+    <!-- Общий стиль для сообщения (остальные наследуються)-->
+    <Style x:Key="timestampStyle">
+        <Setter Property="Run.FontFamily" Value="Segoe UI" />
+        <Setter Property="Run.FontSize" Value="12" />
+        <Setter Property="Run.Foreground" Value="LightGray" />
+        <Setter Property="Run.Cursor" Value="Hand" />
+    </Style>
+
+    <Style x:Key="flowDocumentStyle">
+        <!-- фон области вывода -->
+        <Setter Property="FlowDocument.Background" Value="White" />
+        <Setter Property="FlowDocument.LineHeight" Value="0.5" />
+    </Style>
+
+    <!-- Гиперссылка -->
+    <Style x:Key="hyperlinkStyle" BasedOn="{StaticResource commonMessageStyle}">
+        <Setter Property="Run.Foreground" Value="Blue" />
+    </Style>
+
+    <Style TargetType="{x:Type Paragraph}">
+        <Setter Property="LineHeight" Value="1" />
+    </Style>
+
+</ResourceDictionary>

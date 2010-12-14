@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyclops.Client", "Cyclops.Client.csproj", "{E823F3F6-7918-46AE-B885-579739D92C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyclops.Core", "..\Cyclops.Domain\Cyclops.Core.csproj", "{110E7ED8-671C-4661-BBF5-78E7FCFC019F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Jabber-net", "Jabber-net", "{B72BAD9F-F1B2-4BEB-8001-C8B3B01D7AC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netlib.Dns", "..\Jabber-net\netlib.Dns\netlib.Dns.csproj", "{40AC7A7C-D3E5-46DF-B740-06BD9D2A00E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2005-jabber-net", "..\Jabber-net\2005-jabber-net.csproj", "{6CAE854A-F202-4D2B-B10E-E8D8E81E5EF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E823F3F6-7918-46AE-B885-579739D92C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E823F3F6-7918-46AE-B885-579739D92C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E823F3F6-7918-46AE-B885-579739D92C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E823F3F6-7918-46AE-B885-579739D92C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110E7ED8-671C-4661-BBF5-78E7FCFC019F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110E7ED8-671C-4661-BBF5-78E7FCFC019F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110E7ED8-671C-4661-BBF5-78E7FCFC019F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110E7ED8-671C-4661-BBF5-78E7FCFC019F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40AC7A7C-D3E5-46DF-B740-06BD9D2A00E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40AC7A7C-D3E5-46DF-B740-06BD9D2A00E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40AC7A7C-D3E5-46DF-B740-06BD9D2A00E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40AC7A7C-D3E5-46DF-B740-06BD9D2A00E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAE854A-F202-4D2B-B10E-E8D8E81E5EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAE854A-F202-4D2B-B10E-E8D8E81E5EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAE854A-F202-4D2B-B10E-E8D8E81E5EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAE854A-F202-4D2B-B10E-E8D8E81E5EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40AC7A7C-D3E5-46DF-B740-06BD9D2A00E1} = {B72BAD9F-F1B2-4BEB-8001-C8B3B01D7AC9}
+		{6CAE854A-F202-4D2B-B10E-E8D8E81E5EF5} = {B72BAD9F-F1B2-4BEB-8001-C8B3B01D7AC9}
+	EndGlobalSection
+EndGlobal
