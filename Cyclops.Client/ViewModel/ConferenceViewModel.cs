@@ -85,5 +85,10 @@ namespace Cyclops.Client.ViewModel
             Conference.SendPublicMessage(CurrentlyTypedMessage);
             CurrentlyTypedMessage = string.Empty;
         }
+
+        public override string ToString()
+        {
+            return Conference.ConferenceJid.User;
+        }
     }
 }

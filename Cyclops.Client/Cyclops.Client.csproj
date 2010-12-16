@@ -59,7 +59,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CommandProcessor.cs" />
+    <Compile Include="ConferenceView.xaml.cs">
+      <DependentUpon>ConferenceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ChatScrollViewer.cs" />
+    <Compile Include="Controls\ConferencesTabControl.cs" />
     <Compile Include="Controls\InputBox.cs" />
     <Compile Include="MessageDecoration\Decorators\CommonMessageDecorator.cs" />
     <Compile Include="MessageDecoration\DecoratorsRegistry.cs" />
@@ -72,6 +76,10 @@
     <Compile Include="ViewModel\ConferenceViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MessageViewModel.cs" />
+    <Page Include="ConferenceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -81,7 +81,11 @@ namespace Cyclops.Client.Controls
         private void ScrollToBottom()
         {
             if (Parent is ChatFlowDocumentScrollViewer)
-                ((ChatFlowDocumentScrollViewer) Parent).ScrollViewer.ScrollToBottom();
+            {
+                var scrollViewer = ((ChatFlowDocumentScrollViewer) Parent).ScrollViewer;
+                if (scrollViewer != null)
+                    scrollViewer.ScrollToBottom();
+            }
         }
     }
 }

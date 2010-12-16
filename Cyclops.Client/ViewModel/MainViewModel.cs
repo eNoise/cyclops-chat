@@ -21,30 +21,28 @@ namespace Cyclops.Client.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            OnUpdateStyles();
+
+            if (IsInDesignMode)
+            {
+                return;
+            }
+            //OnUpdateStyles();
 
             JabberSession = new JabberSession(Dispatcher.CurrentDispatcher);
             ConferencesModels = new ObservableCollection<ConferenceViewModel>();
-            if (IsInDesignMode)
-            {
-            }
-            else
-            {
-                JabberSession.BeginAuthentication(new ConnectionConfig
-                                                      {
-                                                          User = "cyclops",
-                                                          Server = "jabber.uruchie.org",
-                                                          Password = "cyclops"
-                                                      });
+            JabberSession.BeginAuthentication(new ConnectionConfig
+                                                    {
+                                                        User = "cyclops",
+                                                        Server = "jabber.uruchie.org",
+                                                        Password = "cyclops"
+                                                    });
 
-                JabberSession.Conferences.Add(new JID("main", "conference.jabber.uruchie.org", "CIA"));
-                //JabberSession.Conferences.Add(new JID("cyclops", "conference.jabber.uruchie.org", "CIA2"));
-                //JabberSession.Conferences.Add(new JID("CIA2", "conference.jabber.uruchie.org", "CIA2"));
-                //JabberSession.Conferences.Add(new JID("support", "conference.jabber.uruchie.org", "CIA2"));
-                JabberSession.Conferences.SynchronizeWith(ConferencesModels, conference => new ConferenceViewModel(conference));
-            }
-
-
+            JabberSession.Conferences.Add(new JID("main", "conference.jabber.uruchie.org", "CIA"));
+            JabberSession.Conferences.Add(new JID("cyclops", "conference.jabber.uruchie.org", "CIA2"));
+            JabberSession.Conferences.Add(new JID("CIA", "conference.jabber.uruchie.org", "CIA2"));
+            JabberSession.Conferences.Add(new JID("support", "conference.jabber.uruchie.org", "CIA2"));
+            JabberSession.Conferences.SynchronizeWith(ConferencesModels, conference => new ConferenceViewModel(conference));
+            
 
             UpdateStyles = new RelayCommand(OnUpdateStyles);
         }

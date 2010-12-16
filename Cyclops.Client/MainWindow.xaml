@@ -40,8 +40,8 @@
 	</Window.Resources>
 
 	<Grid x:Name="LayoutRoot">
-		<TabControl ItemsSource="{Binding ConferencesModels}" DisplayMemberPath="Conference.ConferenceJid.User"  
-                    ContentTemplate="{StaticResource conferenceDataTemplate}" />
+        <Controls:ConferencesTabControl ConferencesSource="{Binding ConferencesModels}" DisplayMemberPath="Conference.ConferenceJid.User"  
+                    />
         <Button Height="20" Width="50" Content="Refresh" HorizontalAlignment="Right" VerticalAlignment="Top" Command="{Binding UpdateStyles}" />
     </Grid>
     
