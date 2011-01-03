@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <Profile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name>Default</Name>
+  <Name>cyclops</Name>
+  <Theme>Default</Theme>
   <ConnectionConfig>
     <Server>jabber.uruchie.org</Server>
-	<!--You could specify NetworkHost if one differs with Server-->
+    <!--You could specify NetworkHost if one differs with Server-->
+    
     <Port>5222</Port>
     <User>cyclops</User>
-    <Password>cyclops</Password>
+    <EncodedPassword>C4Y9MwPhlZI=</EncodedPassword> <!--cyclops ;)-->
   </ConnectionConfig>
 </Profile>

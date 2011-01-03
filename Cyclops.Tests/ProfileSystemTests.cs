@@ -24,7 +24,7 @@ namespace Cyclops.Tests
 
             ProfileManager manager = new ProfileManager(profileTestsDir);
 
-            manager.SaveProfile(CreateFakeProfile("1"));
+            manager.SaveProfile(CreateFakeProfile("cyclops"));
             manager.SaveProfile(CreateFakeProfile("2"));
             manager.SaveProfile(CreateFakeProfile("3"));
 

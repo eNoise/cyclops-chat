@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Threading;
+using Cyclops.Client.Configuration;
 using Cyclops.Client.Properties;
 using Cyclops.Core.Model;
 using Cyclops.Core.Mvvm;
@@ -28,6 +29,7 @@ namespace Cyclops.Client.ViewModel
             }
             //OnUpdateStyles();
 
+            //TODO: replace hard-coded config
             JabberSession = new JabberSession(Dispatcher.CurrentDispatcher);
             ConferencesModels = new ObservableCollection<ConferenceViewModel>();
             JabberSession.BeginAuthentication(new ConnectionConfig
