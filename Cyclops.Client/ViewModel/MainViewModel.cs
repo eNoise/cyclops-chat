@@ -7,7 +7,7 @@ using System.Windows.Markup;
 using System.Windows.Threading;
 using Cyclops.Client.Properties;
 using Cyclops.Core.Model;
-using Cyclops.Core.MVVM;
+using Cyclops.Core.Mvvm;
 using jabber;
 
 namespace Cyclops.Client.ViewModel

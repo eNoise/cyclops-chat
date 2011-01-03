@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Documents;
 using Cyclops.Client.MessageDecoration;
 using Cyclops.Core.Model;
-using Cyclops.Core.MVVM;
+using Cyclops.Core.Mvvm;
 
 namespace Cyclops.Client.ViewModel
 {

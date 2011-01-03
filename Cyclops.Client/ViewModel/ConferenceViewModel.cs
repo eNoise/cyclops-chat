@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using Cyclops.Core.Model;
-using Cyclops.Core.MVVM;
+using Cyclops.Core.Mvvm;
 using Cyclops.Core;
 
 namespace Cyclops.Client.ViewModel

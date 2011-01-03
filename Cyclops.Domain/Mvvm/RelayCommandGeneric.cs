@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Input;
 
-namespace Cyclops.Core.MVVM
+namespace Cyclops.Core.Mvvm
 {
     /// <summary>
     /// ICommand generic implementation

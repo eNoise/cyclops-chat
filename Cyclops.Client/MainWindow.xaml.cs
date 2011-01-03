@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
+using Cyclops.Client.Configuration;
+using Cyclops.Core.Model;
 
 namespace Cyclops.Client
 {

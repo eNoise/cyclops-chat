@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using System.Xml.Serialization;
 using Cyclops.Core.Resources;
+using Cyclops.Core.Security;
 
 namespace Cyclops.Core.Model
 {
@@ -9,6 +11,7 @@ namespace Cyclops.Core.Model
     public class ConnectionConfig
     {
         private string networkHost = string.Empty;
+        private IStringEncryptor stringEncryptor = new TripleDesStringEncryptor();
 
         public ConnectionConfig()
         {
@@ -50,16 +53,32 @@ namespace Cyclops.Core.Model
             ErrorMessageResourceName = "RequiredErrorMessage")]
         [Display(ResourceType = typeof (ConnectionConfigResources), Name = "UserLabel", Order = 1)]
         //[RegularExpression("")]
-            public string User { get; set; }
+        public string User { get; set; }
 
         /// <summary>
         /// Password
         /// </summary>
-        [Required(ErrorMessageResourceType = typeof (ErrorMessageResources),
+        [Required(ErrorMessageResourceType = typeof(ErrorMessageResources),
             ErrorMessageResourceName = "RequiredErrorMessage")]
-        [Display(ResourceType = typeof (ConnectionConfigResources), Name = "PasswordLabel", Order = 2)]
+        [Display(ResourceType = typeof(ConnectionConfigResources), Name = "PasswordLabel", Order = 2)]
         //[RegularExpression("")]
-            public string Password { get; set; }
+        [XmlIgnore]
+        public string Password
+        {
+            get
+            {
+                return "*********";
+            }
+            set { EncodedPassword = stringEncryptor.EncryptString(value); }
+        }
+
+        [Display(AutoGenerateField = false)]
+        public string EncodedPassword { get; set; }
+
+        public string DecodePassword()
+        {
+            return stringEncryptor.DecryptString(EncodedPassword);
+        }
 
         /*
          * TODO: Proxy 

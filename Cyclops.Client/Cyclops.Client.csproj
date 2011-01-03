@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.configuration" />
     <Reference Include="System.Windows.Interactivity">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WPF4\System.Windows.Interactivity.dll</HintPath>
@@ -62,6 +63,8 @@
     <Compile Include="ConferenceView.xaml.cs">
       <DependentUpon>ConferenceView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Configuration\Profile.cs" />
+    <Compile Include="Configuration\ProfileManager.cs" />
     <Compile Include="Controls\ChatScrollViewer.cs" />
     <Compile Include="Controls\ConferencesTabControl.cs" />
     <Compile Include="Controls\InputBox.cs" />
@@ -116,6 +119,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

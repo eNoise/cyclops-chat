@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace Cyclops.Core.MVVM
+namespace Cyclops.Core.Mvvm
 {
     /// <summary>
     /// ICommand implementation

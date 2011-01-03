@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Threading;
@@ -12,8 +13,6 @@ namespace Cyclops.ConsoleTestClient
     {
         static void Main(string[] args)
         {
-            string data = "11111";
-            string sel = new string(data.Skip(2).Take(3).ToArray());
             JabberSession session = new JabberSession();
             session.Authenticated += Authenticated;
 

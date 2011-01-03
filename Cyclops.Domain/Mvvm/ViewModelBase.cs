@@ -3,12 +3,12 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 
-namespace Cyclops.Core.MVVM
+namespace Cyclops.Core.Mvvm
 {
     /// <summary>
     /// Base class for all ViewModel's
     /// </summary>
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : PropertyChangedBase
     {
         private static bool? isInDesignMode;
 
@@ -42,20 +42,6 @@ namespace Cyclops.Core.MVVM
                 }
                 return isInDesignMode.Value;
             }
-        }
-
-        #region INotifyPropertyChanged Members
-
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
-
-        #endregion
-
-        /// <summary>
-        /// Raise property changed event for given name
-        /// </summary>
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
